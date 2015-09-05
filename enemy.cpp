@@ -14,8 +14,7 @@ int enemyPair = 0;
 
 Enemy::Enemy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
-    hitSound = new QMediaPlayer();
-    hitSound->setMedia((QUrl("qrc:/snd/hit.wav")));
+
     //postavljanje random pozicije
     if(enemyPair==0){
       setPixmap(QPixmap(":/img/enemy.png"));
@@ -45,8 +44,7 @@ void Enemy::move(){
 
             game->gtimer->stop();
 
-            hitSound->setPosition(0);
-        hitSound->play();
+
 
             scene()->removeItem(this);
             delete this;

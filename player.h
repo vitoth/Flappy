@@ -16,6 +16,7 @@ class Player: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT //sad može hendlati signals  i slots
 private:
     QMediaPlayer * flapSound;
+    QMediaPlayer * hitSound;
 public:
     Player(QGraphicsItem * parent=0);
     void keyPressEvent(QKeyEvent * event);

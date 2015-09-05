@@ -16,6 +16,8 @@
 extern Game * game;
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
 {
+    hitSound = new QMediaPlayer();
+    hitSound->setMedia((QUrl("qrc:/snd/hit.wav")));
     flapSound = new QMediaPlayer();
     flapSound->setMedia((QUrl("qrc:/snd/flap.wav")));
 
@@ -66,7 +68,10 @@ void Player::Game(){
         Enemy * enemy2 = new Enemy();
         scene()->addItem(enemy2);
         if(increase++ > 0)
+        {
             game->score->increase();
+        hitSound->play();
+        }
 
 		spawnDelay = 0;
 	}

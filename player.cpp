@@ -51,7 +51,7 @@ void Player::keyPressEvent(QKeyEvent *event){
        game->score->reset();
        game->gtimer->start();
        this->setPos(100,100);
-       game->music();
+       game->musicStart();
     }
 
     //uklonjen pomak dolje na tipku
@@ -64,7 +64,7 @@ void Player::keyPressEvent(QKeyEvent *event){
 void Player::Game(){
 
     if(musicCounter++ == 596){
-    game->music();
+    game->musicStart();
     musicCounter=0;
     }
     //stvaranje neprijatelja

@@ -55,17 +55,25 @@ Game::Game(QWidget *parent){
     gtimer->start(5);
 
 
-music();
+   musicStart();
 }
 
-void Game::music()
+void Game::musicStart()
 {
 
-    QMediaPlayer * music = new QMediaPlayer();
+     music = new QMediaPlayer();
     music->setMedia(QUrl("qrc:/snd/bgmusic.wav"));
     if(music->state() == QMediaPlayer::StoppedState)
         music->setPosition(0);
     music->play();
+
+
+}
+
+void Game::musicStop()
+{
+
+    music->stop();
 
 
 }

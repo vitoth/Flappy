@@ -12,8 +12,10 @@
 class Game: public QGraphicsView{
 public:
     Game(QWidget * parent=0);
+    QMediaPlayer * music;
     QTimer * gtimer;
-    void music();
+    void musicStart();
+    void musicStop();
     QGraphicsScene * scene;
     Score * score;
 };

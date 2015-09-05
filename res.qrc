@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>bgmusic.wav</file>
+        <file>flap.wav</file>
+    </qresource>
+</RCC>

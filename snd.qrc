@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/snd">
+        <file>flap.wav</file>
+        <file>bgmusic.wav</file>
+        <file>hit.wav</file>
+    </qresource>
+    <qresource prefix="/img">
+        <file>bird.png</file>
+        <file>enemy.png</file>
+        <file>bg.png</file>
+        <file>enemy2.png</file>
+    </qresource>
+    <qresource prefix="/fnt">
+        <file>flappy.TTF</file>
+    </qresource>
+</RCC>

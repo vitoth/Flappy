@@ -9,6 +9,8 @@
 #include <QDebug>
 #include <stdlib.h> 
 #include <QMediaPlayer>
+#include <QMovie>
+#include <QLabel>
 #include "score.h"
 
 
@@ -21,7 +23,7 @@ Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
     flapSound = new QMediaPlayer();
     flapSound->setMedia((QUrl("qrc:/snd/flap.wav")));
 
-    setPixmap(QPixmap(":/img/bird.png"));
+    setPixmap(QPixmap(":/img/bird.gif"));
 }
 
 void Player::keyPressEvent(QKeyEvent *event){
@@ -48,6 +50,8 @@ void Player::keyPressEvent(QKeyEvent *event){
         Player::scoreReset();
        game->score->reset();
        game->gtimer->start();
+       this->setPos(100,100);
+       game->music();
     }
 
     //uklonjen pomak dolje na tipku
@@ -59,6 +63,10 @@ void Player::keyPressEvent(QKeyEvent *event){
 
 void Player::Game(){
 
+    if(musicCounter++ == 596){
+    game->music();
+    musicCounter=0;
+    }
     //stvaranje neprijatelja
 	spawnDelay++;
 	if (spawnDelay == 400)

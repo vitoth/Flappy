@@ -31,6 +31,7 @@ public:
 	int move = 3;
     double result;
     double param = 20;
+    int musicCounter=0;
     int ppos;
     int ydelta = 0;
     double fallm=2.2;

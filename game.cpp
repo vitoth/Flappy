@@ -8,6 +8,7 @@
 #include "game.h"
 #include <QImage>
 #include <QBrush>
+#include <QSound>
 
 
 
@@ -53,13 +54,18 @@ Game::Game(QWidget *parent){
     QObject::connect(gtimer,SIGNAL(timeout()),player,SLOT(Game()));
     gtimer->start(5);
 
-    //pozadinska muzika
-    //trebalo je u .pro file dodati multimedia modul i includati QMediaPlayer
+
+music();
+}
+
+void Game::music()
+{
+
     QMediaPlayer * music = new QMediaPlayer();
-    music->setMedia(QUrl("qrc:/snd/bgmusic.wav")); //qurl za acces fileu)
-    if(music->state() == QMediaPlayer::StoppedState){
+    music->setMedia(QUrl("qrc:/snd/bgmusic.wav"));
+    if(music->state() == QMediaPlayer::StoppedState)
         music->setPosition(0);
     music->play();
-}
+
 
 }

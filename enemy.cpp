@@ -43,8 +43,9 @@ void Enemy::move(){
             //scene()->removeItem(colliding_items[i]);
 
             game->gtimer->stop();
-
-
+            QMediaPlayer * dieSound = new QMediaPlayer();
+            dieSound->setMedia(QUrl("qrc:/snd/die.wav")); //qurl za acces fileu)
+            dieSound->play();
 
             scene()->removeItem(this);
             delete this;
